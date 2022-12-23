@@ -5,9 +5,7 @@ import br.edu.ifpb.jeffersonmarcelo.jerseyback.modelo.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ProductServico {
@@ -26,7 +24,7 @@ public class ProductServico {
     @Transactional
     public Product inserirOuAtualizar(Product productAInserir) {
         Product productInserido = this.productRepositorio.save(productAInserir);
-        productInserido.setNome(productInserido.getNome() + " - alterado");
+        productInserido.setNome(productInserido.getNome());
         return productInserido;
     }
 
@@ -37,10 +35,3 @@ public class ProductServico {
 
 }
 
- /* Optional<Product> product = this.productRepositorio.findById(productAInserir.getId());
-        if(product.isPresent()){
-            productAInserir.getValor();
-            if (productAInserir.getValor() < 18) {
-            throw new RuntimeException("Menor de 18 reais");
-        }
-        }        */

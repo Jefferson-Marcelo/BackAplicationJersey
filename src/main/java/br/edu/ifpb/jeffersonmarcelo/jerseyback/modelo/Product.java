@@ -9,7 +9,6 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-
     private String imagem;
     private String nome;
 
@@ -19,7 +18,6 @@ public class Product {
     public Long getId() {
         return id;
     }
-
 
     public String getImagem() { return imagem; }
 
